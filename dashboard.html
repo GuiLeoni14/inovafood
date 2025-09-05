@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Completa - Restaurante</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2F3C4F;
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar h2 {
+    text-align: center;
+    padding: 20px 0;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.sidebar a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #3E4B61;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+}
+
+/* Main content */
+.main {
+    margin-left: 250px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 { font-size: 1.5rem; }
+
+.header-right { display: flex; align-items: center; }
+
+.header-right div { margin-left: 20px; cursor: pointer; position: relative; }
+
+.header-right div span {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* Grid de cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card i {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 { font-size: 0.9rem; color: #555; margin-bottom: 5px; }
+.card-content p { font-size: 1.5rem; font-weight: 700; }
+
+/* Charts */
+.charts {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+}
+
+.chart-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Tables */
+.tables {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:hover { background-color: #f1f1f1; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #888;
+    font-size: 0.9rem;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Restaurante</h2>
+    <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="#"><i class="fas fa-boxes"></i> Estoque</a>
+    <a href="#"><i class="fas fa-receipt"></i> Pedidos</a>
+    <a href="#"><i class="fas fa-users"></i> Equipe</a>
+    <a href="#"><i class="fas fa-chart-line"></i> Financeiro</a>
+    <a href="#"><i class="fas fa-user-friends"></i> Clientes</a>
+</div>
+
+<div class="main">
+<header>
+    <h1>Dashboard Restaurante</h1>
+    <div class="header-right">
+        <div><i class="fas fa-bell"></i><span>3</span></div>
+        <div><i class="fas fa-user-circle"></i></div>
+    </div>
+</header>
+
+<!-- Cards -->
+<div class="cards">
+    <div class="card" style="border-left:5px solid #4CAF50;">
+        <i class="fas fa-warehouse" style="color:#4CAF50;"></i>
+        <div class="card-content">
+            <h3>Estoque Disponível</h3>
+            <p>85%</p>
+        </div>
+    </div>
+    <div class="card" style="border-left:5px solid #FFC107;">
+        <i class="fas fa-receipt" style="color:#FFC107;"></i>
+        <div class="card-content">
+            <h3>Pedidos Ativos</h3>
+            <p>12</p>
+        </div>
+    </div>
+    <div class="card" style="border-left:5px solid #03A9F4;">
+        <i class="fas fa-dollar-sign" style="color:#03A9F4;"></i>
+        <div class="card-content">
+            <h3>Fluxo de Caixa</h3>
+            <p>R$ 25.400</p>
+        </div>
+    </div>
+    <div class="card" style="border-left:5px solid #FF5722;">
+        <i class="fas fa-users" style="color:#FF5722;"></i>
+        <div class="card-content">
+            <h3>Equipe</h3>
+            <p>18</p>
+        </div>
+    </div>
+    <div class="card" style="border-left:5px solid #9C27B0;">
+        <i class="fas fa-heart" style="color:#9C27B0;"></i>
+        <div class="card-content">
+            <h3>Clientes Fidelizados</h3>
+            <p>320</p>
+        </div>
+    </div>
+</div>
+
+<!-- Charts -->
+<div class="charts">
+    <div class="chart-container">
+        <h3>Vendas por Categoria</h3>
+        <canvas id="salesChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Pedidos por Hora</h3>
+        <canvas id="ordersChart"></canvas>
+    </div>
+</div>
+
+<!-- Tables -->
+<div class="tables">
+    <div class="chart-container">
+        <h3>Pedidos Recentes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pedido</th>
+                    <th>Cliente</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>#001</td><td>Maria</td><td>Em preparo</td><td>R$ 80</td></tr>
+                <tr><td>#002</td><td>João</td><td>Entregue</td><td>R$ 120</td></tr>
+                <tr><td>#003</td><td>Ana</td><td>Em preparo</td><td>R$ 60</td></tr>
+                <tr><td>#004</td><td>Carlos</td><td>Pendente</td><td>R$ 45</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="chart-container">
+        <h3>Produtos com Estoque Baixo</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Estoque</th>
+                    <th>Alerta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Arroz</td><td>12</td><td>Baixo</td></tr>
+                <tr><td>Feijão</td><td>8</td><td>Crítico</td></tr>
+                <tr><td>Refrigerante</td><td>5</td><td>Crítico</td></tr>
+                <tr><td>Frango</td><td>15</td><td>Baixo</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer>© 2025 Sistema de Gestão de Restaurantes - Exemplo</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const salesCtx = document.getElementById('salesChart').getContext('2d');
+const salesChart = new Chart(salesCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Bebidas', 'Comidas', 'Sobremesas', 'Extras'],
+        datasets: [{
+            data: [45, 35, 15, 5],
+            backgroundColor: ['#4CAF50', '#FFC107', '#03A9F4', '#FF5722'],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { position: 'bottom' } }
+    }
+});
+
+const ordersCtx = document.getElementById('ordersChart').getContext('2d');
+const ordersChart = new Chart(ordersCtx, {
+    type: 'line',
+    data: {
+        labels: ['10h','11h','12h','13h','14h','15h','16h','17h','18h','19h'],
+        datasets: [{
+            label: 'Pedidos',
+            data: [2,3,7,5,6,4,8,5,7,6],
+            borderColor: '#4CAF50',
+            backgroundColor: 'rgba(76, 175, 80, 0.2)',
+            tension: 0.3,
+            fill: true,
+            pointRadius: 4
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+    }
+});
+</script>
+</body>
+</html>
