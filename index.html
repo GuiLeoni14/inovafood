@@ -687,6 +687,127 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* ======================================= */
+/* SEÇÃO: COMPROMISSO COM A QUALIDADE */
+/* ======================================= */
+
+#qualidade-servico {
+  padding: 80px 0;
+  background-color: #fafafa;
+  text-align: center;
+  color: #333;
+}
+
+#qualidade-servico h2 {
+  color: #e53935; /* vermelho InovaFood */
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+#qualidade-servico p {
+  max-width: 850px;
+  margin: 10px auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+#qualidade-servico ul {
+  max-width: 750px;
+  margin: 40px auto;
+  text-align: left;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#qualidade-servico ul li {
+  position: relative;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  line-height: 1.6;
+}
+
+#qualidade-servico ul li::before {
+  content: "✔";
+  color: #e53935;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
+#qualidade-servico strong {
+  color: #d32f2f;
+}
+
+/* ======================================= */
+/* SEÇÃO: VÍDEO INSTITUCIONAL */
+/* ======================================= */
+
+#video-institucional {
+  padding: 80px 0;
+  background-color: #ffffff;
+  text-align: center;
+  color: #333;
+}
+
+#video-institucional h2 {
+  color: #e53935;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#video-institucional p {
+  max-width: 850px;
+  margin: 0 auto 25px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+#video-institucional iframe {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#video-institucional iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+#video-institucional .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ======================================= */
+/* RESPONSIVIDADE */
+/* ======================================= */
+
+@media (max-width: 768px) {
+  #qualidade-servico h2,
+  #video-institucional h2 {
+    font-size: 1.8rem;
+  }
+
+  #qualidade-servico p,
+  #video-institucional p {
+    font-size: 1rem;
+  }
+
+  #qualidade-servico ul li {
+    font-size: 1rem;
+  }
+
+  #video-institucional iframe {
+    height: 300px;
+  }
+}
     </style>
 </head>
 <body>
@@ -995,6 +1116,62 @@
             </div>
         </div>
     </section>
+<!-- =================================================== -->
+<!-- SEÇÃO: COMPROMISSO COM A QUALIDADE DE SERVIÇO -->
+<!-- =================================================== -->
+<section id="qualidade-servico" style="padding:60px 0; background-color:#fafafa;">
+  <div class="container">
+    <h2 style="text-align:center; color:#e53935; margin-bottom:20px;">
+      Compromisso com a Qualidade de Serviço
+    </h2>
+    <p style="max-width:800px; margin:0 auto 20px; text-align:center; font-size:18px; line-height:1.6;">
+      Na <strong>InovaFood</strong>, acreditamos que a excelência em tecnologia é construída com base em governança sólida e melhoria contínua.
+      Por isso, estamos implementando as práticas do <strong>ITIL 4</strong> e iniciando nosso caminho rumo à certificação <strong>ISO/IEC 20000</strong>.
+    </p>
+
+    <p style="max-width:800px; margin:0 auto 20px; text-align:center; font-size:18px; line-height:1.6;">
+      Essa jornada representa nosso compromisso em oferecer serviços de TI cada vez mais estáveis, seguros e eficientes — 
+      entregando valor real aos nossos clientes e fortalecendo a confiança nas operações gastronômicas que atendemos.
+    </p>
+
+    <ul style="max-width:700px; margin:30px auto; font-size:17px; line-height:1.8;">
+      <li><strong>Adoção das práticas ITIL 4</strong> para gerenciar incidentes, mudanças e problemas com eficiência.</li>
+      <li><strong>Planejamento para certificação ISO/IEC 20000</strong> como diferencial competitivo no mercado gastronômico.</li>
+      <li><strong>Foco em qualidade e continuidade de serviço</strong> para nossos clientes empresariais e parceiros estratégicos.</li>
+      <li><strong>Cultura de governança e transparência</strong> como pilares do nosso crescimento sustentável.</li>
+    </ul>
+
+    <p style="text-align:center; margin-top:40px; font-size:18px; color:#333;">
+      O futuro da gestão gastronômica começa com qualidade, confiança e inovação — começa com a <strong>InovaFood</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- =================================================== -->
+<!-- SEÇÃO: VÍDEO INSTITUCIONAL ITIL 4 E ISO 20000 -->
+<!-- =================================================== -->
+<section id="video-institucional" style="padding:60px 0; background-color:#fff;">
+  <div class="container" style="text-align:center;">
+    <h2 style="color:#e53935; margin-bottom:20px;">Vídeo Institucional — ITIL 4 e ISO/IEC 20000</h2>
+    <p style="max-width:800px; margin:0 auto 30px; font-size:18px; line-height:1.6;">
+      Para engajar nossos colaboradores e parceiros nessa transformação, desenvolvemos um vídeo institucional explicando, de forma simples e prática,
+      o que são o <strong>ITIL 4</strong> e a <strong>ISO/IEC 20000</strong>, e como essas práticas impulsionam a qualidade e a eficiência na gestão de serviços da InovaFood.
+    </p>
+
+    <!-- Player do vídeo (substitua o link do YouTube pelo vídeo final da empresa) -->
+    <div style="margin:0 auto; max-width:800px;">
+      <iframe width="100%" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="Vídeo Institucional InovaFood - ITIL 4 e ISO 20000" 
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <p style="margin-top:20px; font-size:16px; color:#555;">
+      *Este vídeo está disponível também no portal interno e na seção “Compromisso com a Qualidade de Serviço”.
+    </p>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer id="contact" class="footer">
